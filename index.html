@@ -81,6 +81,16 @@ function getNewBackground(){
   });
 }
 
+// Generates tweet text and creates button
+function createTweetButtonFromQuote( quote ) {
+  console.log('createTweetButtonFromQuote',quote)
+  btnTwt.unbind('click').bind( "click", function() {
+    var tweetText = (quote.quote+ " -" + quote.author);
+    var url='https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText);
+    window.open(url, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400")
+  });
+};
+
 $(document).ready(function() {
   getNewQuote();
 })
