@@ -59,7 +59,6 @@ function getNewBackground(){
 
 // Generates tweet text and creates button
 function createTweetButtonFromQuote( quote ) {
-  console.log('createTweetButtonFromQuote',quote)
   btnTwt.unbind('click').bind( "click", function() {
     var tweetText = (quote.quote+ " -" + quote.author);
     var url='https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText);
